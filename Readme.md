@@ -1,4 +1,4 @@
-# Build
+# Run the solution
 
 ## Run on windows
 
