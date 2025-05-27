@@ -20,6 +20,9 @@ var input = await File.ReadAllBytesAsync("./Assets/Input.docx");
 
 var doc = new Document(new MemoryStream(input));
 
+IWarningCallback callback = new WarningCallback();
+doc.WarningCallback = callback;
+
 var resultDocx = new MemoryStream();
 doc.Save(resultDocx, SaveFormat.Docx);
 await File.WriteAllBytesAsync("./Assets/Output.docx", resultDocx.ToArray());
